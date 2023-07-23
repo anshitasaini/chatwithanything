@@ -11,18 +11,5 @@ interface ChakraProps {
 }
 
 export const Chakra = ({ children }: ChakraProps) => {
-  return (
-    <>
-      <ColorModeScript
-        initialColorMode={customTheme.config?.initialColorMode}
-        type="cookie"
-      />
-      <ChakraProvider
-        colorModeManager={cookieStorageManager}
-        theme={customTheme}
-      >
-        {children}
-      </ChakraProvider>
-    </>
-  );
+  return <ChakraProvider theme={customTheme}>{children}</ChakraProvider>;
 };
