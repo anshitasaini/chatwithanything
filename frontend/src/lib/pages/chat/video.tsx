@@ -1,21 +1,18 @@
-// pages/VideoPlayerPage.tsx
 import React from 'react';
 import { Box, Container, Flex, Heading } from '@chakra-ui/react';
 import YoutubeEmbed from '~/lib/components/YoutubeEmbed';
+import Chat from '~/lib/components/Chat';
 
 const VideoPlayerPage: React.FC = () => {
-  const videoId = 'YOUR_YOUTUBE_VIDEO_ID'; // Replace with the actual YouTube video ID
+  const videoId = 'YOUR_YOUTUBE_VIDEO_ID'; 
 
   return (
     <Flex flexDirection="row">
-      <Box flex="2"> {/* Update the flex value to 2 to take 2/3 of the screen */}
+      <Box flex="2">
         <YoutubeEmbed videoId={videoId} />
       </Box>
       <Box flex="1" ml={4}>
-        <p style={{ fontSize: '14px' }}> {/* Decrease the font size of the text */}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus vel
-          scelerisque pharetra.
-        </p>
+        <Chat />
       </Box>
     </Flex>
   );

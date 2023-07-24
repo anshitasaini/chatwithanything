@@ -24,7 +24,6 @@ const ChatInputBox: React.FC<Props> = ({ onMessageSend }) => {
     router.push('/chat/video');
   };
 
-  // Use useBreakpointValue to set the width responsively
   const inputWidth = useBreakpointValue({ base: '100%', sm: '80%', md: '70%', lg: '60%' });
 
   return (
