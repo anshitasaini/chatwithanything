@@ -4,7 +4,7 @@ import YoutubeEmbed from '~/lib/components/YoutubeEmbed';
 import Chat from '~/lib/components/Chat';
 
 const VideoPlayerPage: React.FC = () => {
-  const videoId = 'YOUR_YOUTUBE_VIDEO_ID'; 
+  const videoId = 'qQp2FX13Hlg'; 
 
   return (
     <Flex flexDirection="row">

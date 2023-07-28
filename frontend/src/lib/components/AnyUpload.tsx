@@ -4,24 +4,26 @@ import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import { FiSend } from 'react-icons/fi';
 import FileUpload from './FileUpload';
+import { UploadService } from '~/client';
+import { RepoInfo } from '../../client/models/RepoInfo';
 
-interface Props {
-  onMessageSend: (message: string) => void;
-}
-
-const ChatInputBox: React.FC<Props> = ({ onMessageSend }) => {
+const AnyUpload: React.FC = () => {
   const router = useRouter();
   const { colorMode } = useColorMode();
   const [message, setMessage] = useState('');
   const [file, setFile] = useState<File | undefined>();
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async() => {
     if (message === '') return;
-    // onMessageSend(message);
+    if (message.includes('github')) {
+      console.log(message)
+      router.push({
+        pathname: '/chat/code',
+        query: { repoUrl: message },
+      })
+    }
     setMessage('');
     setFile(undefined);
-
-    router.push('/chat/video');
   };
 
   const inputWidth = useBreakpointValue({ base: '100%', sm: '80%', md: '70%', lg: '60%' });
@@ -62,4 +64,4 @@ const ChatInputBox: React.FC<Props> = ({ onMessageSend }) => {
   );
 };
 
-export default ChatInputBox;
+export default AnyUpload;

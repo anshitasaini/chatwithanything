@@ -9,16 +9,16 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const maxWidth = useBreakpointValue({ base: "100%", sm: "100%", md: "1000px", lg: "1200px" });
+  const maxWidth = useBreakpointValue({ base: "100%", sm: "100%", md: "1400px", lg: "1600px" });
 
   return (
     <Box margin="0 auto" maxWidth={maxWidth} transition="0.5s ease-out">
-      <Box margin="8">
+      <Box margin="4">
         <Header />
         <Box as="main" marginY={22}>
           {children}
         </Box>
-        <Footer />
+        {/* <Footer /> */}
       </Box>
     </Box>
   );
